@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Conversor de Temperatura</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    input[type="text"] {
+      font-size: 20px;
+      padding: 10px;
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Conversor de Temperatura</h1>
+    <input type="text" id="temperature-input">
+    <button id="to-celsius">Para Celsius</button>
+    <button id="to-fahrenheit">Para Fahrenheit</button>
+    <p id="output"></p>
+  </div>
+  <script>
+    const input = document.getElementById("temperature-input");
+    const toCelsiusButton = document.getElementById("to-celsius");
+    const toFahrenheitButton = document.getElementById("to-fahrenheit");
+    const output = document.getElementById("output");
+
+    function toCelsius() {
+      const temperature = parseFloat(input.value);
+      const celsius = (temperature - 32) * (5 / 9);
+      output.innerHTML = `${temperature}°F = ${celsius.toFixed(2)}°C`;
+    }
+
+    function toFahrenheit() {
+      const temperature = parseFloat(input.value);
+      const fahrenheit = (temperature * (9 / 5)) + 32;
+      output.innerHTML = `${temperature}°C = ${fahrenheit.toFixed(2)}°F`;
+    }
+
+    toCelsiusButton.addEventListener("click", toCelsius);
+    toFahrenheitButton.addEventListener("click", toFahrenheit);
+  </script>
+</body>
+</html>

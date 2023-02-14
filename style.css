@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+    /* Inclui uma imagem de fundo passando o caminho do arquivo */
+    background-image: url('./images/flowers.avif');
+    margin: 0;
+    display: flex;
+    /* vh pega pela proporcionalidade da tela é exigido para termos o display: flex */
+    height: 100vh;
+    /* align-items é utilizado para centralizar na vertical (de baixo para cima) */
+    align-items: center;
+    /* justify-content é utilizado para centralizar na vertical (de baixo para cima) */
+    justify-content: center;
+}
+
+.botoes {
+    margin-top: 2%;
+}
+
+legend {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 20px;
+}
